@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f2f5;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .container {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 500px;
+        }
+        h1, h2 {
+            color: #1877f2;
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+        .profile-info {
+            margin-bottom: 2rem;
+            background-color: #f0f2f5;
+            padding: 1rem;
+            border-radius: 8px;
+        }
+        .profile-info p {
+            margin: 0.5rem 0;
+            color: #606770;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        label {
+            margin-bottom: 0.5rem;
+            color: #606770;
+        }
+        input {
+            padding: 0.5rem;
+            margin-bottom: 1rem;
+            border: 1px solid #dddfe2;
+            border-radius: 6px;
+            font-size: 1rem;
+        }
+        button {
+            background-color: #1877f2;
+            color: white;
+            padding: 0.75rem;
+            border: none;
+            border-radius: 6px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #166fe5;
+        }
+        .logout {
+            margin-top: 1rem;
+            text-align: center;
+        }
+        .logout a {
+            color: #1877f2;
+            text-decoration: none;
+        }
+        .logout a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>User Profile</h1>
+        <div class="profile-info">
+            <p><strong>Name:</strong> <span id="user-name">John Doe</span></p>
+            <p><strong>Email:</strong> <span id="user-email">john@example.com</span></p>
+        </div>
+        <h2>Update Profile</h2>
+        <form action="/update-profile" method="POST">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" value="John Doe" required>
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" value="john@example.com" required>
+            
+            <label for="current-password">Current Password:</label>
+            <input type="password" id="current-password" name="current-password" required>
+            
+            <label for="new-password">New Password (leave blank to keep current):</label>
+            <input type="password" id="new-password" name="new-password">
+            
+            <label for="confirm-password">Confirm New Password:</label>
+            <input type="password" id="confirm-password" name="confirm-password">
+            
+            <button type="submit">Update Profile</button>
+        </form>
+        <div class="logout">
+            <a href="login.html">Logout</a>
+        </div>
+    </div>
+</body>
+</html>
